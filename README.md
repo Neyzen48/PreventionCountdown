@@ -1,5 +1,5 @@
 # Interaktive Prävention Monitor
-# 1&nbsp;Einleitung
+## 1&nbsp;Einleitung
 ### 1.1&nbsp;&nbsp;Nutzerzählung und Countdown
 - Ziel ist es, die Anzahl der Nutzer zu ermitteln, die täglich durch bestimmte Treppenbereiche gehen.
 - Ein Countdown soll gestartet werden, der eine Art Unfallwahrscheinlichkeit darstellt.
