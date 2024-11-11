@@ -1,0 +1,23 @@
+{
+  "name": "preventioncountdown",
+  "version": "1.0.0",
+  "description": "The Interactive Prevention Monitor tracks daily stair users and initiates a countdown indicating accident risk. At zero, a \"Death Screen\" displays accident stats and a safety message. Implemented with HTML, CSS, JavaScript, Node.js.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neyzen48/PreventionCountdown.git"
+  },
+  "author": "Ömer T.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neyzen48/PreventionCountdown/issues"
+  },
+  "homepage": "https://github.com/Neyzen48/PreventionCountdown#readme",
+  "dependencies": {
+    "electron": "^33.2.0"
+  }
+}
