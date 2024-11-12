@@ -26,7 +26,7 @@ function resetCountdown() {
 
 const datasets = [
     {
-        label: 'Günde',
+        label: 'Gründe',
         data: [33, 33, 33],
         backgroundColor: ['#eb5156', '#8d8d8d', '#880808'],
         font: 'Troy Sans Regular',
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         myChart.update();
     }
 
-    setInterval(switchChartData, 15000);
+    setInterval(switchChartData, 20000);
 });
 
 

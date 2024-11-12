@@ -47,7 +47,7 @@
         </div>
         <div class="content_left">
             <h1 id="chartTitle" style="font-family: 'Troy Sans', sans-serif;">Gründe für den Treppensturz</h1>
-            <canvas id="myPieChart" width="200" height="200" style="margin-right: 0px; margin-left: -40px;"></canvas>       
+            <canvas id="myPieChart" width="200" height="200" style="margin-right: 0px; margin-left: -40px; align-items:center;"></canvas>       
             <button style="margin-top: 50px; z-index: 1;  padding: 30px; cursor: pointer; font-family: 'Troy Sans', sans-serif; font-size: 16px; border-radius: 5px; font-weight: bold;" onclick="openModal()">Mehr Infos zur Treppensicherheit</button>    
         </div>
 
@@ -90,7 +90,7 @@
             currentTitleIndex = (currentTitleIndex + 1) % titles.length;
             titleElement.textContent = titles[currentTitleIndex];
         }
-        setInterval(switchTitle, 15000);
+        setInterval(switchTitle, 20000);
     </script>
 </body>
 </html>
