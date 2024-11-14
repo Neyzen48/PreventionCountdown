@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="script/renderer.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link type="text/css" href="/style/main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Kumbh+Sans:wght@100..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<body>
+    <div class="content">
+        <div class="content_main" >
+            <img src="res/tu.png" alt="background" style="width: calc(1048vw*100/1920); position: absolute; float: right; top: 0; right: 0; z-index: 0" >
+            <header>TREPPENUNFALLZÄHLER</header>
+            <div class="countdown">
+                <%- include('partials/countdown') %>
+            </div>
+            <button class="decreaseButton" onclick="decreaseCountdown();">Hier drücken, bevor die Treppe hinaufsteigen</button>
+        </div>
+        <div class="content_side">
+            <h1 class="chartTitle" id="chartTitle">Gründe für den Treppensturz</h1>
+            <div class="chartContainer">
+                <canvas class= "myPieChart" id="myPieChart"></canvas>
+            </div>
+            <button class= "infoButton" onclick="openModal()">Mehr Infos zur Treppensicherheit</button>
+        </div>
+    </div>
+
+
+    <div id="modalOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+    <div id="infoModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); z-index: 1000; width: 80%; max-width: 500px; height: 60%;" >
+        <h1 style="font-family: Troy Sans, sans-serif; font-size: 36px; color: #333; text-align: center; margin-bottom: 20px;">Treppenunfälle in Deutschland</h1>
+        <p style="font-family: Troy Sans, sans-serif; font-size: 20px; color: #555; line-height: 1.6; text-align: center;">
+            Treppenstürze entstehen oft durch Eile, Ablenkung oder technische Mängel wie rutschige Stufen.<br>
+            Um Unfälle zu vermeiden, kann man auf folgende Dinge achten:
+        </p><br>
+
+        <div style="text-align: center;">
+            <img id="infoImage" src="res/Laufhantel.webp" alt="Wechselndes Bild" style="width: 100%; max-width: 300px; border-radius: 5px;">
+            <p id="imageCaption" style="font-family: Troy Sans, sans-serif; font-size: 16px; color: #666; margin-top: 10px;">
+                Achte beim Treppensteigen darauf, dass du die Laufhantel benutzt.
+            </p>
+
+        </div><br><br>
+
+        <button onclick="closeModal()" style="display: block; margin: 20px auto 0; padding: 10px 20px; font-size: 16px; font-family: Arial, sans-serif; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); color: black;">
+            Schließen
+        </button>
+    </div>
+
+    <!-- <div id="modalOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div> -->
+    <script src="script/renderCountdown.js"></script>
+    <script>
+        const titles = [
+            "Gründe für den Treppensturz",
+            "Arten von Arbeitsunfällen",
+        ];
+
+        const titleElement = document.getElementById("chartTitle");
+
+        let currentTitleIndex = 0;
+
+        function switchTitle() {
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+            titleElement.textContent = titles[currentTitleIndex];
+        }
+        setInterval(switchTitle, 20000);
+    </script>
+</body>
+</html>
