@@ -27,6 +27,24 @@ header {
     font-size: 4vw;
 }
 
+h1 {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 1.8vw;
+    margin-bottom: calc(48vw*100/1920);
+}
+
+h2 {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 1.6vw;
+}
+
+p {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1vw;
+}
+
 .content {
     display: flex;
     flex-direction: row;
@@ -82,7 +100,9 @@ header {
     margin-right: calc(32*100vw/1920);
     letter-spacing: 0.3vw;
     flex: 1;
-    font-family: "Kumbh Sans", sans-serif;
+}
+
+.countdown_label>p {
     color: #6D3636FF;
     font-size: 1.4vw;
     font-weight: bold;
@@ -170,12 +190,12 @@ header {
     cursor: pointer;
 }
 
+.infoButton:active {
+    background-color: #24659a;
+}
+
 .chartTitle {
     text-align: center;
-    font-family: "Kumbh Sans", sans-serif;
-    font-weight: bolder;
-    font-size: 1.8vw;
-    margin-bottom: calc(48vw*100/1920);;
 }
 
 .chartContainer {
@@ -191,9 +211,8 @@ header {
     max-width: 100%;
     min-height: 100%;
     min-width: 100%;
-    object-fit: contain;}
-
-
+    object-fit: contain;
+}
 
 .decreaseButton {
     padding: calc(32*100vw/1920);

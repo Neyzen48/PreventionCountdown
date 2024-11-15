@@ -115,4 +115,16 @@ function prevImage() {
     updateImage();
 }
 
+function closePopUp(id) {
+    let window = document.getElementById(id);
+    window.getElementsByClassName('overlay')[0].style.display = 'none';
+    window.getElementsByClassName('popup-form')[0].style.display = 'none';
+}
+
+function openPopUp(id) {
+    let window = document.getElementById(id);
+    window.getElementsByClassName('overlay')[0].style.display = 'block';
+    window.getElementsByClassName('popup-form')[0].style.display = 'block';
+}
+
 setInterval(nextImage, 5000);

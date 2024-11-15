@@ -16,10 +16,15 @@ function renderCountdown(number) {
     digit3.innerText = `${n3}`;
 }
 function decreaseCountdown() {
-    if(countdown===0) return resetCountdown();
+    if(countdown===0) {
+        return resetCountdown();
+    }
     renderCountdown(--countdown);
+    if(countdown===0) {
+        openPopUp('deathScreen');
+    }
 }
 
 function resetCountdown() {
-    renderCountdown(countdown=100);
+    renderCountdown(countdown=20);
 }
