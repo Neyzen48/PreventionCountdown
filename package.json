@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "docker": "node server.js",
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:ejs": "ejslint 'views/**/*.ejs'",
     "lint": "eslint ."
