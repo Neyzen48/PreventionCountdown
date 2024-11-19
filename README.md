@@ -2,6 +2,8 @@
 
 Dieses interaktive Projekt simuliert die Wahrscheinlichkeit von Treppenunfällen und bietet Nutzern Informationen zur Prävention. Die Anwendung wurde entwickelt, um auf humorvolle Weise die Gefahren von Treppenstürzen aufzuzeigen und gleichzeitig nützliche Tipps und Statistiken anzubieten.
 
+- [Link zu online Webanwendung](https://prevention-countdown-930735744894.europe-west1.run.app/)
+
 ## Inhaltsverzeichnis
 - [Features](#features)
 - [Technologien](#technologien)
