@@ -1,0 +1,44 @@
+<div class="popup-container" id=<%- id %>>
+    <link rel="stylesheet" href="/style/popup.css">
+    <div class="overlay" id="overlay">
+        <div class="popup-form" id="popup-form">
+            <div class="wrapper">
+                <div class="popup-top" id="">
+                    <div class="popup-top-left" id="">
+                        <h2><%- header %></h2>
+                    </div>
+                    <div class="popup-top-right" id="">
+                        <button class="close" id="button-close" onclick="closePopUp('<%- id %>')"><span class="icon-cross"></span></button>
+                    </div>
+                </div>
+
+                <div class="popup-area" id="popup-area">
+                    <%- include(innerHTML) %>
+                </div>
+
+                <div class="popup-bottom" id="popup-bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let buttonList<%- id %> = <%- JSON.stringify(buttons)%>;
+    const container<%- id %> = document.getElementById('<%- id %>').getElementsByClassName('popup-bottom')[0];
+    buttonList<%- id %>.forEach(pBtn => {
+        const btn = document.createElement('button');
+        btn.className = 'popUpButton';
+        btn.id = pBtn.id;
+        btn.innerHTML = pBtn.value;
+        if (pBtn.onclick) {
+            btn.setAttribute('onclick', pBtn.onclick);
+        }
+        container<%- id %>.appendChild(btn);
+    });
+
+    document.getElementById('<%- id %>').getElementsByClassName('overlay')[0].style.backgroundColor = '<%- overlayColor %>';
+    if(!<%- closeWithButton %>) {
+        document.getElementById('<%- id %>').getElementsByClassName('popup-top-right')[0].style.display = 'none';
+    }
+</script>

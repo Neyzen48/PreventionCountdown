@@ -1,35 +1,39 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow } = require("electron");
+const server = require("./server");
 const path = require('path');
+require('electron-reload')(path.join(__dirname, './'), {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+    hardResetMethod: 'exit'
+});
+
+let mainWindow;
 
 function createWindow() {
-    const win = new BrowserWindow({
-        fullscreen: true,          // Start in fullscreen mode
-        autoHideMenuBar: true,     // Hide the menu bar in fullscreen
+    mainWindow = new BrowserWindow({
+        fullscreen: true,
+        autoHideMenuBar: true,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
-            contextIsolation: false
-        }
+            contextIsolation: false,
+
+        },
     });
 
-    win.loadFile('index.html').then();
+    // Load the HTML from the internal server
+    const serverPort = server.port;
+    mainWindow.loadURL(`http://localhost:${serverPort}/`);
 
-    // Optional: Toggle fullscreen with F11
-    globalShortcut.register('F11', () => {
-        win.setFullScreen(!win.isFullScreen());
+    mainWindow.on("closed", () => {
+        mainWindow = null;
     });
 }
 
-app.whenReady().then(createWindow);
+app.on("ready", createWindow);
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+app.on("window-all-closed", () => {
+    if (process.platform !== "darwin") app.quit();
 });
 
-app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
-    }
+app.on("activate", () => {
+    if (mainWindow === null) createWindow();
 });

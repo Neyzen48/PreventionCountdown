@@ -27,7 +27,7 @@ Die Statistik könnte dynamisch gestaltet werden, sodass sie austauschbar ist. D
 ### 2.3&nbsp;&nbsp;Countdown-Mechanismus
 Entwicklung eines Timers oder Zählmechanismus, der den Countdown herunterzählt und auf den Todesbildschirm umschaltet, sobald eine bestimmte Schwelle erreicht wird.
 ### 2.4&nbsp;&nbsp;Death Screen & Sicherheitsbotschaft
-- Sobald der Countdown bei `null` angekommen ist, wird der Nutzer auf den Todesbildschirm weitergeleitet.
+- Sobald der Countdown bei null angekommen ist, wird der Nutzer auf den Todesbildschirm weitergeleitet.
 - Darunter wird eine präventive Botschaft oder ein Sicherheitstipp angezeigt.
 ### 2.5&nbsp;&nbsp;Mögliche technische Umsetzung
 - Frontend: HTML, CSS, JavaScript (für die UI und Countdown-Logik).

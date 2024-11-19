@@ -1,0 +1,179 @@
+:root {
+    --border-radius: calc(8*100vw/1920);
+    --div-margin: calc(8*100vw/1920);
+    --div-padding: calc(32*100vw/1920) calc(64*100vw/1920) calc(32  *100vw/1920) calc(64*100vw/1920);
+    --border: #ACACACFF 1pt solid;
+    --background-color-1: #F0F0F0FF;
+    --background-color-2: rgba(255, 255, 255, 0.4);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Hintergrundfarbe und Transparenz anpassen */
+    z-index: 9999; /* Stellen Sie sicher, dass das Overlay über allem anderen Inhalt liegt */
+    display: none; /* Standardmäßig ausgeblendet */
+}
+
+#popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    max-width: fit-content;
+    background-color: white;
+    padding: calc(32*100vw/1920);
+    border: calc(16*100vw/1920);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 calc(16*100vw/1920) rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 90%
+}
+
+.popup-form .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.popup-form .wrapper > *{
+    margin-bottom: calc(8*100vw/1920);
+}
+
+.popup-form .wrapper > *:last-child{
+    margin-bottom: 0;
+}
+
+.wrapper .popup-top {
+    display: inline-flex;
+    align-items: center;
+}
+
+.wrapper .popup-top-left {
+    display: flex;
+    justify-content: left;
+}
+
+.wrapper .popup-top-right {
+    display: flex;
+    justify-content: right;
+    flex: 1;
+}
+
+.wrapper .popup-area {
+    min-height: calc(16*100vw/1920);
+    max-width: calc(600*100vw/1920);
+    width: calc(1024*100vw/1920);
+}
+
+.wrapper .popup-bottom {
+    height: calc(48*100vw/1920);
+}
+
+.wrapper .popup-top .close {
+    font-size: 1vw;
+    font-weight: bold;
+    color: #fff;
+    background: #ff5c5c;
+    width: calc(40*100vw/1920);
+    height:calc(40*100vw/1920);
+    cursor: pointer;
+    box-shadow: 0 0 calc(8*100vw/1920) 0 rgba(0, 0, 0, 0.5);
+    margin: 0;
+    border: 0;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms;
+
+}
+
+.wrapper .popup-top .close .icon-cross {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    position: relative;
+    width: calc(20*100vw/1920);
+    height: calc(20*100vw/1920);
+}
+
+.wrapper .popup-top .close .icon-cross:before, .wrapper .popup-top .close .icon-cross:after {
+    content: "";
+    position: absolute;
+    top: calc(8*100vw/1920);
+    left: 0;
+    right: 0;
+    height: calc(3*100vw/1920);
+    background: #fff;
+    border-radius: calc(3*100vw/1920);
+}
+
+.wrapper .popup-top .close .icon-cross:before {
+    transform: rotate(45deg);
+}
+
+.wrapper .popup-top .close .icon-cross:after {
+    transform: rotate(-45deg);
+}
+
+.wrapper .popup-top .close .icon-cross span {
+    display: block;
+}
+
+.wrapper .popup-top .close:hover, .wrapper .popup-top .close:focus {
+    transform: rotateZ(90deg);
+    background: #9c3838;
+}
+
+.wrapper .popup-bottom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.wrapper .popup-bottom .button {
+    padding: calc(8*100vw/1920);
+    width: calc(144*100vw/1920);
+    margin-right: calc(32*100vw/1920);
+}
+
+.wrapper .popup-bottom .button:last-child {
+    margin-right: 0;
+}
+
+.popUpButton {
+    padding: calc(8*100vw/1920) calc(16*100vw/1920);
+    border: var(--border);
+    background-color: #3596e5;
+    box-shadow: inset 0 0 calc(64vw*100/1920) rgba(255, 255, 255, 0.5);
+    border-radius: calc(8vw*100/1920);
+    margin-right:  calc(8vw*100/1920);
+    text-align: center;
+    font-family: "Kumbh Sans", sans-serif;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bolder;
+    margin-top: auto;
+}
+
+.popUpButton:first-of-type {
+    margin-left: auto;
+}
+
+.popUpButton:last-of-type {
+    margin-right: auto;
+}
+
+.popUpButton:active {
+    background-color: #24659a;
+}
