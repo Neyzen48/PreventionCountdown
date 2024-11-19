@@ -19,4 +19,4 @@ COPY server.js /usr/src/app/
 EXPOSE 8080
 
 # Startbefehl
-CMD ["npm", "run", "docker"]
+CMD ["npm", "run", "server"]
